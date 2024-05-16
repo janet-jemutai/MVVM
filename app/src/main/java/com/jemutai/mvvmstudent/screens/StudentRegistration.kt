@@ -30,7 +30,9 @@ import com.jemutai.mvvmstudent.viewmodel.StudentViewModelFactory
 fun StudentRegistrationScreen() {
     val context = LocalContext.current
     val application = context.applicationContext as StudentApplication
-    val viewModel: StudentViewModel = viewModel(factory = StudentViewModelFactory(application.repository))
+    val viewModel: StudentViewModel = viewModel(
+        factory = StudentViewModelFactory(application.repository)
+    )
 
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
