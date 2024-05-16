@@ -24,16 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jemutai.mvvmstudent.data.StudentApplication
 import com.jemutai.mvvmstudent.viewmodel.StudentViewModel
-import com.jemutai.mvvmstudent.viewmodel.StudentViewModelFactory
 
 @Composable
-fun StudentRegistrationScreen() {
-    val context = LocalContext.current
-    val application = context.applicationContext as StudentApplication
-    val viewModel: StudentViewModel = viewModel(
-        factory = StudentViewModelFactory(application.repository)
-    )
-
+fun StudentRegistrationScreen(viewModel: StudentViewModel = viewModel()) {
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var studentClass by remember { mutableStateOf("") }
